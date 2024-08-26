@@ -3,9 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>megamart</title>
   </head>
   <body>
-    <h1>megamart</h1>
+    <!-- Header Section -->
+
+    <header class="header">
+      <div class="logo">
+        <img src="images/logo-main.jpg" alt="logo" />
+      </div>
+      <div class="seacrh">
+        <div class="search-container">
+          <select id="category-dropdown">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="women's clothing">Women's Clothing</option>
+            <option value="jewelery">Jewelry</option>
+          </select>
+
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+          </div>
+        </div>
+
+        <div class="search-icon">
+          <img src="images/Search.jpg" alt="Search Icon" />
+        </div>
+      </div>
+
+      <div class="cart">
+        <img src="images/Buy.png" alt="Cart Icon" />
+        <span class="cart-heading">Cart</span>
+        <span id="cart-count" class="cart-count"></span>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <h1 class="main-heading">Result</h1>
+
+      <div id="card-container"></div>
+    </main>
+    <script src="./script.js"></script>
   </body>
 </html>

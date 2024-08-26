@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  /* border: 1px solid red;
+  display: flex;
+  padding: 20px 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly; */
+  display: grid;
+  grid-template-areas: "logo search cart";
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.logo img {
+  width: 196px;
+  height: 48px;
+}
+.seacrh {
+  grid-area: search;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(243, 249, 251);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+}
+.search-box input::placeholder {
+  background-color: rgb(243, 249, 251);
+}
+
+.search-container {
+  display: flex;
+  gap: 20px;
+}
+
+#category-dropdown {
+  border: none;
+  outline: none;
+  background-color: rgb(243, 249, 251);
+}
+.cart {
+  grid-area: cart;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100px;
+}
+.cart-count {
+  background: #008ecc;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  padding: 30px 100px;
+  background-color: rgb(225, 225, 225);
+}
+.main-heading {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  line-height: 38.73px;
+  font-weight: 500;
+  color: #008ecc;
+}
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  /* padding: 20px; */
+}
+
+.card {
+  width: 227px;
+  gap: 0px;
+  border-radius: 15px;
+  border: 1px 0px 0px 0px;
+  background-color: white;
+  position: relative;
+  transition: all 0.5sec;
+}
+.card-img {
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #ededed; */
+  position: relative;
+}
+.card-img img {
+  width: 100%;
+  height: 150px; /* Set a fixed height */
+  object-fit: contain; /* Keeps the image aspect ratio, without stretching */
+  border-radius: 16px 16px 0 0; /* Optional: To match the card's border-radius */
+}
+.phone-title {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+.phone-price {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+
+.card-content {
+  padding: 16px;
+  border-radius: 0px, 0px, 15px, 15px;
+}
+.card-rating {
+  position: relative;
+}
+.rate {
+  display: flex;
+  gap: 5px;
+}
+.add-to-card {
+  width: 130px;
+  height: 38px;
+  border-radius: 6px;
+  padding: 10px;
+
+  font-family: "Inter", sans-serif;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 148px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: none;
+}
+.card:hover .add-to-card {
+  display: block;
+}
+.add-to-card:hover {
+  background-color: #ffc915; /* Change button background color on hover */
+}
+
+@media (max-width: 740px) {
+  .header {
+    grid-template-areas:
+      "logo  . cart"
+      "search   search   search ";
+  }
+}
