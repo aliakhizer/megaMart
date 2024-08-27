@@ -121,6 +121,7 @@ h6 {
   align-items: center;
   /* background-color: #ededed; */
   position: relative;
+  margin: 15px;
 }
 .card-img img {
   width: 100%;
@@ -186,5 +187,31 @@ h6 {
     grid-template-areas:
       "logo  . cart"
       "search   search   search ";
+  }
+  .main-container {
+    padding: 20px 20px;
+  }
+  .card {
+    width: 388px;
+  }
+  .card-des {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-rating {
+    display: flex;
+    justify-content: space-between;
+  }
+  .add-to-card {
+    display: block;
+    position: static;
+    transform: none;
+  }
+  .rate {
+    align-items: center;
+  }
+  .rate img {
+    width: 16px;
+    height: 15px;
   }
 }

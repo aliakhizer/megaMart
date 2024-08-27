@@ -4,7 +4,7 @@
 
 fetch("https://fakestoreapi.com/products")
   .then((response) => {
-    return response.json(); // convert in json format backend and frontend communicate through 
+    return response.json(); // convert in json format backend and frontend communicate through
   })
   .then((products) => {
     updateProductCards(products);
@@ -18,8 +18,6 @@ fetch("https://fakestoreapi.com/products")
 function updateProductCards(products) {
   let data1 = ""; //products array of objects
   products.forEach((product) => {
-    
-
     const fillStar = Math.floor(product.rating.rate);
     const emptyStar = `5 - ${fillStar}`;
 
@@ -85,17 +83,19 @@ function filterProductCards(products) {
       updateProductCards(filterproducts);
     });
 }
+
 function searchProductCards(products) {
   document
     .querySelector(".search-box input")
-    .addEventListener("input", function () {
+    .addEventListener("keyup", function () {
       const searchTerm = this.value.toLowerCase();
       console.log(searchTerm);
 
+      console.log("product", products);
       const searchedProducts = products.filter((product) =>
-        product.title.toLowerCase().includes(searchTerm)
+        product.category.toLowerCase().startsWith(searchTerm)
       );
 
-      updateProductCards(searchedProducts); // Update cards with searched products
+      updateProductCards(searchedProducts);
     });
 }
