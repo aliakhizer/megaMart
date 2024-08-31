@@ -16,7 +16,7 @@ fetch("https://fakestoreapi.com/products")
   });
 
 function updateProductCards(products) {
-  let data1 = ""; //products array of objects
+  let products = "";
   products.forEach((product) => {
     const fillStar = Math.floor(product.rating.rate);
     const emptyStar = `5 - ${fillStar}`;
@@ -33,7 +33,7 @@ function updateProductCards(products) {
               `;
     }
 
-    data1 += ` <div class="card">
+    products += ` <div class="card">
         
           <div class="card-img">
             <img src=${product.image} class="card-image" alt="phone img" />
@@ -55,7 +55,7 @@ function updateProductCards(products) {
         </div> `;
   });
 
-  document.getElementById("card-container").innerHTML = data1;
+  document.getElementById("card-container").innerHTML = products;
 
   let count = 0;
   document.querySelectorAll(".add-to-card").forEach((button) => {
@@ -89,11 +89,10 @@ function searchProductCards(products) {
     .querySelector(".search-box input")
     .addEventListener("keyup", function () {
       const searchTerm = this.value.toLowerCase();
-      console.log(searchTerm);
 
       console.log("product", products);
       const searchedProducts = products.filter((product) =>
-        product.category.toLowerCase().startsWith(searchTerm)
+        product.category.toLowerCase().includes(searchTerm)
       );
 
       updateProductCards(searchedProducts);
